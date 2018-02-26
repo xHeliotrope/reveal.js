@@ -49,36 +49,161 @@
 				</section>
 				<section>
 					<h2>Table of Contents</h2>
+					<ol>
+						<li>What the darn heck is a Blockchain?</li>
+						<li class="fragment">How do transactions work?</li>
+						<li class="fragment">The Decentralized Web</li>
+						<li class="fragment">The Future of Cryptocurrency</li>
+					</ol>
+				</section>
+				<section>
+					<h2>Disclaimer</h2>
+					<video width="1200" controls>
+						<source src="chickens.mp4" type="video/mp4"></source>
+					</video>
+				</section>
+				<section data-background="#4d7e65">
+					<section>
+						<h4>Blockchain is not Cryptocurrency</h4>
+						<ul>
+							<li class="fragment"><i>However</i>, many cryptocurrencies use blockchain technology</li>
+							<li class="fragment">Blockchains <i>have the potential to</i> create security and trust on a distrubuted network</li>
+							<li class="fragment">Which make the implications for blockchain tech much greater than currency (re-decentralize the web)</li>
+							<li class="fragment">Not all Cryptocurrencies use Blockchain</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Analogies</h2>
+					</section>
+					<section data-background="blockchain-infra.jpg" data-background-size="600px">
+						<h5>A de-centralized database</h5>
+					</section>
+					<section>
+						<h5>As a Datastore..</h5>
+						<ul>
+							<li class="fragment">&#x1F440; Everyone has read-access</li>
+							<li class="fragment">&#x1F45D; Wallet/User addresses instead of names</li>
+							<li class="fragment">&#x1F58A; Writes must be signed (require private key)</li>
+							<li class="fragment">&#x1F6AB; Invalid writes will get rejected by other nodes</li>
+						</ul>
+					</section>
+					<section data-background="rebase.svg">
+						<h5 class="fragment">A Git Tree (For the programmers out there)</h5>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Blocks as Commits</li>
+							<li class="fragment">Chains as Branches</li>
+							<li class="fragment">Modifying old commit data can(should) break the repo</li>
+							<li class="fragment">Everyone tracks the <code>master</code>, when conflicts happen, there are momentary <code>develop</code> branches</li>
+						</ul>
+					</section>
+					<section data-background="blocks.png">
+						<h2 style="color:black"><code>Blocks</code></h2>
+						<ul> 
+							<li class="fragment" style="color:black">Transaction List</li>
+							<li class="fragment" style="color:black">Merkle Tree + Nonce</li>
+							<li class="fragment" style="color:black">Header</li>
+						</ul>
+					</section>
+					
+				</section>
+				<section data-background="#b5533c">
+					<section>
+						<h4>How transactions are managed</h4>
 						<ol>
-							<li>What the darn heck is a Blockchain?</li>
-							<ul>
-								<li>Blocks = List of Transactions</li>
-								<li>Git as a model for blockchain</li>
-								<li>Decentralized</li>
-							</ul>
-							</li>
-							<li>How transactions are managed</li>
-							<li>
+							<li class="fragment">Proof of Work vs Proof of Stake</li>
+							<li class="fragment">Verification</li>
+							<li class="fragment">Forks</li>
+						</ol>
+					</section>
+					<section data-background="nodes.jpg">
+						<h1 class="fragment">Nodes</h1>
+					</section>
+					<section>
+						<h5>Mining (Proof of Work)</h5>
+						<ul>
+							<li class="fragment">Node connected to Blockchain Network, with access to current blockchain</li>
+							<li class="fragment">Verify no double spending has taken place</li>
+							<li class="fragment">Access to mempool (current unverified transactions)</li>
+							<li class="fragment">Compute <code>SHA(SHA(merkle root + Nonce))</code> to get a leading-0 result</li>
+							<li class="fragment">Transmit results to other nodes, see if block gets accepted</li>
+							<li class="fragment">Bad for the Environment</li>
+						</ul>
+					</section>
+					<section data-background="not-a-scam.jpg" data-background-size="600px">
+							<h5 class="fragment" style="color:red">What about all those crooks?</h5>
+							<h6 class="fragment" style="color:yellow">When using trusted exchanges, offline wallets and up-to-date tools, your currency can be secure. Its recommended that 
+								disk drives containing wallet keys be stored somewhere secure (bank vault, backup, metal-engraving).
+							</h6>
+						</section>
+				</section>
+				<section>
+					<h2>The Decentralized Web</h2>
+					<ol>
+						<li>Second and Third Generation Cryptos</li>
+						<li>IPFS</li>
+						<li>Programming Distributed Apps</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h2>Current and Potential Uses for Blockchain</h2>
+					</section>
+					<section>
+						<h2>Currency, obv</h2>
+						<ul>
+							<li>Hybrid Asset (currency and stock)</li>
+							<li class="fragment">Transnational Bank Transfer (Ripple)</li>
+							<li class="fragment">Intra-Cryptocurrency Exchange (Cardano)</li>
+							<li class="fragment">Smart Contracts (Ethereum)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>SupplyChain Management and IoT</h2>
+						<ul>
+							<li>Goods and Products Monitoring via RFID (WaltonChain)</li>
+							<li>VeChain</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Smart Contracts</h2>
+						<ul>
+							<li>Royalties &#x1F436;</li>
+							<li>Insurance &#x1F436;</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Voting</h2>
+					</section>
+					<section>
+						<h2>CryptoKitties!</h2>
+					</section>
+				</section>
+				<section>
+					<h2>Resources</h2>
+					<ul>
+						<li>Metamask.io</li>
+						<li>Coinbase</li>
+						<li>Binance</li>
+					</ul>
+				</section>
+				<section>
+						<section>
+							<h2>Math and Computer Science</h2>
 							<ol>
-								<li><i>Proof of Work</i> vs Proof on Stake</li>
-								<li>Verification</li>
-								<li>Forks</li>
-							</ol></li>
-							<li>Math and Computer Science</li>
-							<li><ol>
 								<li>Merkle Trees</li>
 								<li>Directed Acyclic Graphs</li>
 								<li>Cryptographic Hash Functions</li>
 							</ol>
-							</li>
-							<li>The Future of Cryptocurrency</li>
-							<li><ol>
-								<li>Second and Third Generation Cryptos</li>
-								<li>The Decentralized Web</li>
-								<li>Programming Distributed Apps</li>
-							</ol></li>
-						</ol>
-				</section>
+						</section>
+						<section>
+							<h4>Proceed at your own risk</h4>
+							<video width="1200" controls>
+								<source src="http://res.cloudinary.com/dl8zxsla9/video/upload/v1519509934/mathmagic.mp4" type="video/mp4">
+							</video>
+						</section>
+					</section>
 				<section>
 					<h2>First, some Math</h2>
 					<video width="1200" controls>
