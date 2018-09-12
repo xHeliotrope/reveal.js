@@ -200,6 +200,10 @@
 						<p>Blockchains are <b>politically</b> decentralized (no one controls them) and <b>architecturally</b> decentralized (no infrastructural central point of failure) but they are <b>logically</b> centralized (there is one commonly agreed state and the system behaves like a single computer) <br/><br/> -<i>Canadian Guy wearing Unicorn Shirt</i></p>
 					</section>
 					<section>
+						<h3>Peer to Peer Networks</h3>
+						<img src="decentralized.jpg" width="700" />
+					</section>
+					<section>
 						<ol>
 							<li class="fragment">Transaction pool</li>
 							<li class="fragment">Mining Nodes</li>
@@ -210,9 +214,9 @@
 					<section>
 						<h5>Mining (Proof of Work)</h5>
 						<ul>
-							<li class="fragment">Node connected to Blockchain Network, with access to current blockchain</li>
+							<li class="fragment">Node connected to Blockchain Network, with updated local copy</li>
 							<li class="fragment">Verify no double spending has taken place</li>
-							<li class="fragment">Access to transaction ppool (current unverified transactions)</li>
+							<li class="fragment">Access to transaction pool (current unverified transactions)</li>
 							<li class="fragment">Compute <code>SHA1(SHA1(merkle root + Nonce))</code> to get a leading-0 result</li>
 							<li class="fragment">Transmit results to other nodes, see if block gets accepted</li>
 							<li class="fragment">Bad for the Environment</li>
