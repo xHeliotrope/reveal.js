@@ -62,16 +62,17 @@
 				<section>
 					<section>
 						<h2>Who am I?</h2>
-						<h4 class="fragment"><i>I'm Ryan</i></h4>
+						<h4 class="fragment">I'm Ryan</h4>
+						<h4 class="fragment">👋</h4>
 					</section>
 					<section>
 						<ul>
 						<li class="fragment">"Full" "Stack" "Developer"</li>
 						<li class="fragment">3 years of Professional Software making
 							<ul>
-								<li class="fragment">Programmer Analyst at WashU</li>
-								<li class="fragment">FrontEnd Development with Chris Schmitz at Paradowski Creative</li>
-								<li class="fragment">Backend + DevOps at Tagg Logistics</li>
+								<li class="fragment">Programmer Analyst at Washington University</li>
+								<li class="fragment">FrontEnd Dev with Chris Schmitz at Paradowski Creative</li>
+								<li class="fragment">Backend Dev at Tagg Logistics</li>
 							</ul>
 						</li>
 
@@ -81,11 +82,11 @@
 
 				</section>
 				<section>
-					<h2>What Is a Blockchain?</h2>
+					<h2>This Talk:</h2>
 					<ol>
-						<li class="fragment">Trees</li>
-						<li class="fragment">A Protocols</li>
-						<li class="fragment">Security and Proofs and such</li>
+						<li class="fragment">As a Data Structure</li>
+						<li class="fragment">Networks and Algorithms</li>
+						<li class="fragment">Applications and such</li>
 					</ol>
 				</section>
 				<section>
@@ -96,21 +97,89 @@
 				</section>
 				<section data-background="#4d7e65">
 					<section>
-						<h4>Blockchain is not <i>just</i> Cryptocurrency</h4>
+						<h3>blockchain (<code>noun</code>)</h3>
 						<ul>
-							<li class="fragment"><i>However</i>, many cryptocurrencies use blockchain technology</li>
-							<li class="fragment">Blockchains create security and trust on an open, distrubuted, trustless network</li>
-							<li class="fragment">Not all Cryptocurrencies use Blockchain</li>
+							<li class="fragment">Naively: A Data Store</li>
+							<li class="fragment">Little less naively: An Immutable, Decentralized Ledger</li>
+							<li class="fragment">Independently and actively verified by peers on a network</li>
+						</ul>
+					</section>
+					<section data-background="rebase.svg" data-background-size="1000px">
+					</section>
+					<section>
+						<h5>Git applies a cryptographic hash function to objects in a repository</h5>
+						<ul>
+							<li class="fragment">For consistency, not security</li>
+							<li class="fragment">f(📄) = 🤷 </li>
+							<li class="fragment">f(📄 + 1) = 🤷</li>
+							<li class="fragment"><code>echo 'Hello' | git hash-object --stdin</code></li>
+							<li class="fragment"><span style="color:#ffc107">Bonus</span>: <code>echo 'Hello' | openssl sha1</code></li>
+						</ul>
+
+					</section>
+					<section data-background-size="600px">
+						<h5>(Merkle) Trees and Blobs</h5>
+						<div style="display: flex;justify-content: space-between">
+							<img src="not-a-merkle-tree.jpg" height="300px" width="400px"/>
+							<img src="blob.jpg" height="300px" width="400px"/>
+						</div>
+					</section>
+					<section>
+						<h5>One Dimensional View</h5>
+						<img src="hashes.png" width="1000px" />
+					</section>
+					<section>
+						<h5>Two Dimensional View</h5>
+						<img src="blocks.jpeg" width="1000px" />
+					</section>
+					<section>
+						<h4>To Recap:</h4>
+						<ul>
+							<li class="fragment">Git calculates <i>unique*</i> hashes for objects in a repository</li>
+							<li class="fragment">(1D View) Changes in the <span style="color:#ffc107">data</span> cause changes in the root hash</li>
+							<li class="fragment">(2D view) Changes in the <span style="color:#ffc107">history</span> cause changes in the root hash</li>
+							<li class="fragment">Large computational benefits (set membership)</li>
+						</ul>
+
+					</section>
+					<section>
+						<h4>Git Trees + a Bunch of moving parts = BlockChain!?</h4>
+						<ul>
+							<li class="fragment">Yay!! We did it! 🎉</li>
+							<li class="fragment">well..sort of 🤔</li>
+							<li class="fragment">Git actually uses a dd merkle <i>dag</i>, not a tree</li>
+							<li class="fragment">I think theres also a Trie somewhere in there</li>
+							<li class="fragment">There's also the whole decentralized + concensus + trustless parts</li>
+						</ul>
+
+					</section>
+					<section>
+						<h4>Quick Comparison</h4>
+						<ul>
+							<li class="fragment">Blocks as Commits</li>
+							<li class="fragment">Chains as Branches</li>
+							<li class="fragment">Everyone tracks the <code>master</code>. Multiple new commits happen, the <code>commits</code> compete to be the "true" chain</li>
+							<li class="fragment">Which is equivalent to branching</li>
+							<li class="fragment">Forks happen. Usually when theft is involved.</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Analogies</h2>
+						<h2 ><code>Blocks</code></h2>
+						<img src="blocks.png" width="1000px" />
+						<ul> 
+							<li class="fragment">Transaction List</li>
+							<li class="fragment">Merkle Tree + Nonce</li>
+						</ul>
 					</section>
-					<section data-background="blockchain-infra.jpg" data-background-size="600px">
-						<h5>A de-centralized database</h5>
+					
+				</section>
+				<section data-background="#b5533c">
+					<section>
+						<h2>Transactions</h2>
+						<p>Adding a line to a the next "commit"</p>
 					</section>
 					<section>
-						<h5>As a Database..</h5>
+						<h4>Thinking again of BlockChain as a Data Store</h4>
 						<ul>
 							<li class="fragment">&#x1F440; Everyone has read-access</li>
 							<li class="fragment">&#x1F45D; Wallet/User addresses instead of names</li>
@@ -118,59 +187,34 @@
 							<li class="fragment">&#x1F6AB; Invalid writes will get rejected by other nodes</li>
 						</ul>
 					</section>
-					<section data-background="rebase.svg">
-						<h2 class="fragment">The Ol' Block and Chain</h2>
-					</section>
-					<section>
-						<ul>
-							<li class="fragment">Blocks as Commits</li>
-							<li class="fragment">Chains as Branches</li>
-							<li class="fragment">Modifying old commit data can(should) break the repo</li>
-							<li class="fragment">Everyone tracks the <code>master</code>. When conflicts happen, there are momentary <code>develop</code> branches</li>
-						</ul>
-					</section>
-					<section data-background="blocks.png">
-						<h2 style="color:black"><code>Blocks</code></h2>
-						<ul> 
-							<li class="fragment" style="color:black">Transaction List</li>
-							<li class="fragment" style="color:black">Merkle Tree + Nonce</li>
-							<li class="fragment" style="color:black">Header</li>
-						</ul>
-					</section>
-					
-				</section>
-				<section data-background="#b5533c">
-					<section>
-						<h4>Transactions</h4>
-						<ol>
-							<li class="fragment">Security</li>
-							<li class="fragment">Mempool</li>
-							<li class="fragment">Mining</li>
-							<li class="fragment">Full Nodes</li>
-						</ol>
-					</section>
 					<section>
 						<video width="1200" controls>
 							<source src="http://res.cloudinary.com/dl8zxsla9/video/upload/v1519746059/crypto.mp4" type="video/mp4"></source>
 						</video>
 					</section>
+				</section>
+				<section>
 					<section>
-						<h5>Mempool</h5>
-						<div style="display:flex">
-							<img src="mempool.jpg" height="200"/>
-							<img src="mempool.png" height="400"/>
-						</div>
+						<h2>The Network</h2>
 					</section>
-					<section data-background="nodes.jpg">
-						<h1 class="fragment">Nodes</h1>
+					<section>
+						<p>Blockchains are <b>politically</b> decentralized (no one controls them) and <b>architecturally</b> decentralized (no infrastructural central point of failure) but they are <b>logically</b> centralized (there is one commonly agreed state and the system behaves like a single computer) <br/><br/> -<i>Canadian Guy wearing Unicorn Shirt</i></p>
+					</section>
+					<section>
+						<ol>
+							<li class="fragment">Transaction pool</li>
+							<li class="fragment">Mining Nodes</li>
+							<li class="fragment">Full Nodes</li>
+							<li class="fragment">Thin Nodes</li>
+						</ol>
 					</section>
 					<section>
 						<h5>Mining (Proof of Work)</h5>
 						<ul>
 							<li class="fragment">Node connected to Blockchain Network, with access to current blockchain</li>
 							<li class="fragment">Verify no double spending has taken place</li>
-							<li class="fragment">Access to mempool (current unverified transactions)</li>
-							<li class="fragment">Compute <code>SHA(SHA(merkle root + Nonce))</code> to get a leading-0 result</li>
+							<li class="fragment">Access to transaction ppool (current unverified transactions)</li>
+							<li class="fragment">Compute <code>SHA1(SHA1(merkle root + Nonce))</code> to get a leading-0 result</li>
 							<li class="fragment">Transmit results to other nodes, see if block gets accepted</li>
 							<li class="fragment">Bad for the Environment</li>
 						</ul>
@@ -178,11 +222,11 @@
 				</section>
 				<section>
 					<section>
-					<h2>The Decentralized Web</h2>
+					<h2>Other Stuff Real Quick</h2>
 					<ol>
 						<li>Second and Third Generation Cryptos</li>
 						<li>IPFS</li>
-						<li>Programming Distributed Apps</li>
+						<li>Distributed Apps</li>
 					</ol>
 					</section>
 					<section>
@@ -212,67 +256,29 @@
 												$("#" + candidates[name]).html(val);
 											  }
 											});
-									</code></pre></section>
+									</code></pre>
+							</section>
 				
 					</section>
-				</section>
-				<section>
 					<section>
-						<h2>Current and Potential Uses for Blockchain</h2>
-					</section>
-					<section>
-						<h2>Currency</h2>
+						<h2>Non 100% Currency-related uses of BlockChain</h2>
 						<ul>
-							<li>Hybrid Asset (currency and stock)</li>
-							<li class="fragment imgafter1">Transnational Bank Transfer (Ripple)</li>
-							<li class="fragment imgafter2">Intra-Cryptocurrency Exchange (Cardano)</li>
-							<li class="fragment imgafter3">Smart Contracts (Ethereum)</li>
+							<li>Open Access Data</li>
+							<li>HealthCare</li>
+							<li>FileStorage</li>
+							<li>RFID + Logistics</li>
+							<li>Messaging</li>
 						</ul>
 					</section>
 					<section>
-						<h2>SupplyChain Management and IoT</h2>
+						<h2>Resources</h2>
 						<ul>
-							<li>Goods and Products Monitoring via RFID (WaltonChain)</li>
-							<li>VeChain</li>
+							<li>Podcast: Unchained</li>
+							<li>Podcast: The Bitcoin Podcast Network</li>
+							<li>Youtube</li>
 						</ul>
 					</section>
-					<section>
-						<h2>Smart Contracts</h2>
-						<ul>
-							<li>Royalties &#x1F436;</li>
-							<li>Insurance &#x1F436;</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Voting</h2>
-					</section>
-					<section>
-						<h2>CryptoKitties!</h2>
-					</section>
 				</section>
-				<section>
-					<h2>Resources</h2>
-					<ul>
-						<li>Metamask.io</li>
-						<li>Coinbase</li>
-						<li>Binance</li>
-					</ul>
-				</section>
-				<section>
-					<section>
-						<h2>Math and Computer Science</h2>
-						<ol>
-							<li>Merkle Trees</li>
-							<li>Directed Acyclic Graphs</li>
-							<li>Cryptographic Hash Functions</li>
-						</ol>
-					</section>
-					<section>
-						<h4>Proceed at your own risk</h4>
-						<video width="1200" controls>
-							<source src="http://res.cloudinary.com/dl8zxsla9/video/upload/v1519509934/mathmagic.mp4" type="video/mp4">
-						</video>
-					</section>
 				</section>
 			</div>
 
